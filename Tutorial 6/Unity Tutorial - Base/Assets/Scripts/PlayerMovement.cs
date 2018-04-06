@@ -16,8 +16,9 @@ public class PlayerMovement : MonoBehaviour
     public float Speed;
     [Range(0f, 0.5f)]
     public float rotateSpeed;
-    [Range(0f, 0.5f)]
-    public float jumpSpeed;
+    public bool onFloor;
+
+    public Rigidbody rb;
 
 
     void Awake()
@@ -62,6 +63,7 @@ public class PlayerMovement : MonoBehaviour
 
             anim.SetFloat(hash.speedFloat, 1.5f, speedDampTime, Time.deltaTime);
             anim.SetBool("Backward", false);
+            anim.SetBool("Jump", false);
         }
 
         //Backwards
@@ -71,17 +73,20 @@ public class PlayerMovement : MonoBehaviour
 
             anim.SetFloat(hash.speedFloat, -1.5f, speedDampTime, Time.deltaTime);
             anim.SetBool("Backward", true);
+            anim.SetBool("Jump", false);
         }
         //Static 
         if (Input.GetAxis("Vertical") == 0)
         {
             anim.SetFloat(hash.speedFloat, 0, speedDampTime, Time.deltaTime);
             anim.SetBool("Backward", false);
+            anim.SetBool("Jump", false);
         }
         //Turning Left 
         if (Input.GetAxis("Horizontal") < 0)
         {
             transform.Rotate(Vector3.down * rotateSpeed);
+            anim.SetBool("Jump", false);
         }
 
         //Turning Right
@@ -89,15 +94,36 @@ public class PlayerMovement : MonoBehaviour
         {
             transform.Rotate(Vector3.up * rotateSpeed);
         }
-        if(Input.GetKeyDown ("space"))
+        //Jumping
+
+        if (onFloor)
         {
-            transform.Translate(Vector3.up * 60 * Time.deltaTime, Space.World);
+            if (Input.GetKeyDown("space"))
+            {
+                //  transform.Translate(Vector3.up * jumpSpeed);
+
+                rb.velocity = new Vector3(0, 10.0f, 0);
+
+                anim.SetFloat(hash.speedFloat, 0, speedDampTime, Time.deltaTime);
+                anim.SetBool("Jump", true);
+            }
         }
    
    }
 
+    void CollsionOnEnter(Collision Player)
+    {
+        Player.gameObject.CompareTag("Ground");
+        onFloor = true;
+    }
+    void CollsionOnExit(Collision Player)
+    {
+        Player.gameObject.CompareTag("Ground");
+        onFloor = false;
+    }
+
     //Rotating Camerea
-        void Rotating(float mouseXInput)
+    void Rotating(float mouseXInput)
     {
         Rigidbody ourBody = this.GetComponent<Rigidbody>();
 

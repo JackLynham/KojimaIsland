@@ -145,6 +145,7 @@ MonoBehaviour:
   sneakingbool: 0
   shoutingbool: 0
   backwardsbool: 0
+  jumpbool: 0
 --- !u!4 &20890375
 Transform:
   m_ObjectHideFlags: 0
@@ -382,6 +383,10 @@ Prefab:
       propertyPath: m_LocalScale.x
       value: 100
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: e07d22bfb4feba7429672783e34c6b79, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e07d22bfb4feba7429672783e34c6b79, type: 3}
   m_IsPrefabParent: 0
@@ -517,7 +522,8 @@ MonoBehaviour:
   sensitivityX: 1
   Speed: 0.0302
   rotateSpeed: 0.5
-  jumpSpeed: 0.5
+  onFloor: 1
+  rb: {fileID: 657633402}
 --- !u!81 &657633407
 AudioListener:
   m_ObjectHideFlags: 0
@@ -731,7 +737,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400088, guid: 3b059b06d05c0e04ba42674f84feac25, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 101
+      value: 62.83
       objectReference: {fileID: 0}
     - target: {fileID: 400088, guid: 3b059b06d05c0e04ba42674f84feac25, type: 3}
       propertyPath: m_LocalPosition.z
