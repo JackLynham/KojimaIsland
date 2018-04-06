@@ -14,8 +14,10 @@ public class PlayerMovement : MonoBehaviour
     private float elapsedtime = 0;
     [Range(0f, 0.1f)]
     public float Speed;
-    [Range(0f, 0.2f)]
+    [Range(0f, 0.5f)]
     public float rotateSpeed;
+    [Range(0f, 0.5f)]
+    public float jumpSpeed;
 
 
     void Awake()
@@ -76,14 +78,25 @@ public class PlayerMovement : MonoBehaviour
             anim.SetFloat(hash.speedFloat, 0, speedDampTime, Time.deltaTime);
             anim.SetBool("Backward", false);
         }
+        //Turning Left 
+        if (Input.GetAxis("Horizontal") < 0)
+        {
+            transform.Rotate(Vector3.down * rotateSpeed);
+        }
 
+        //Turning Right
         if (Input.GetAxis("Horizontal") > 0)
         {
-            transform.Rotate(Vector3.left * Time.deltaTime);
+            transform.Rotate(Vector3.up * rotateSpeed);
+        }
+        if(Input.GetKeyDown ("space"))
+        {
+            transform.Translate(Vector3.up * 60 * Time.deltaTime, Space.World);
         }
    
    }
 
+    //Rotating Camerea
         void Rotating(float mouseXInput)
     {
         Rigidbody ourBody = this.GetComponent<Rigidbody>();
