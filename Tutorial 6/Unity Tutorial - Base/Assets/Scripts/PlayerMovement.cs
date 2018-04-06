@@ -12,7 +12,11 @@ public class PlayerMovement : MonoBehaviour
     private Animator anim;
     private HashIDs hash;
     private float elapsedtime = 0;
-    private bool noBackMov = true;
+    [Range(0f, 0.1f)]
+    public float Speed;
+    [Range(0f, 0.2f)]
+    public float rotateSpeed;
+
 
     void Awake()
     {
@@ -32,7 +36,7 @@ public class PlayerMovement : MonoBehaviour
         float mouseX = Input.GetAxis("Mouse X");
 
         Rotating(mouseX);
-        MovementManager(v, sneak);
+        MovementManager();
         elapsedtime += Time.deltaTime;
       
     }
@@ -46,46 +50,41 @@ public class PlayerMovement : MonoBehaviour
 
     }
 
-    void MovementManager(float vertical, bool sneaking)
+    void MovementManager()
     {
-        anim.SetBool(hash.sneakingbool, sneaking);
-
-        if (vertical > 0)
+        // Walking 
+        if (Input.GetAxis("Vertical") > 0)
         {
+            // forward
+            transform.Translate(Vector3.forward *Speed);
+
             anim.SetFloat(hash.speedFloat, 1.5f, speedDampTime, Time.deltaTime);
             anim.SetBool("Backward", false);
-            noBackMov = true;
         }
 
-        if (vertical < 0)
+        //Backwards
+        if (Input.GetAxis("Vertical") < 0)
         {
-            if(noBackMov == true)
-            {
-                elapsedtime = 0;
-                noBackMov = false; 
-            }
+            transform.Translate(Vector3.back* Speed);
+
             anim.SetFloat(hash.speedFloat, -1.5f, speedDampTime, Time.deltaTime);
             anim.SetBool("Backward", true);
-
-            Rigidbody ourbody = this.GetComponent<Rigidbody>();
-
-            float movement = Mathf.Lerp(0f, 0.0f, -0.025f);
-            Vector3 moveback = new Vector3(0.0f, 0.0f, movement);
-            moveback = ourbody.transform.TransformDirection(moveback);
-            ourbody.transform.position += moveback;
-
         }
-
-        if (vertical == 0)
+        //Static 
+        if (Input.GetAxis("Vertical") == 0)
         {
-            anim.SetFloat(hash.speedFloat, 0.09f);
+            anim.SetFloat(hash.speedFloat, 0, speedDampTime, Time.deltaTime);
             anim.SetBool("Backward", false);
-            noBackMov = true;
         }
-    
-    }
 
-    void Rotating(float mouseXInput)
+        if (Input.GetAxis("Horizontal") > 0)
+        {
+            transform.Rotate(Vector3.left * Time.deltaTime);
+        }
+   
+   }
+
+        void Rotating(float mouseXInput)
     {
         Rigidbody ourBody = this.GetComponent<Rigidbody>();
 
