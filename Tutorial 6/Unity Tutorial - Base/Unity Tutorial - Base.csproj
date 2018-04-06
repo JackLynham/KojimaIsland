@@ -94,12 +94,14 @@
     <Compile Include="Assets\Scripts\ball\Gravityon.cs" />
     <Compile Include="Assets\Scripts\ball\HoverTrigger.cs" />
     <Compile Include="Assets\Set_up_Camera.cs" />
+    <Compile Include="Assets\Tank_Movement.cs" />
     <Compile Include="Assets\UnityChan\Scripts\CameraController.cs" />
     <Compile Include="Assets\UnityChan\Scripts\FaceUpdate.cs" />
     <Compile Include="Assets\UnityChan\Scripts\IdleChanger.cs" />
     <Compile Include="Assets\UnityChan\Scripts\SceneLoader.cs" />
     <Compile Include="Assets\UnityChan\Scripts\ThirdPersonCamera.cs" />
     <Compile Include="Assets\UnityChan\Scripts\UnityChanControlScriptWithRgidBody.cs" />
+    <Compile Include="Assets\tankMovement.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Shaders\ReflectiveDiffuseSpecTransp.shader" />

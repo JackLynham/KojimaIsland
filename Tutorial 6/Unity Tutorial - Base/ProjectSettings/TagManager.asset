@@ -12,6 +12,7 @@ TagManager:
   - Siren
   - Alarm
   - Ground
+  - Tank
   layers:
   - Default
   - TransparentFX

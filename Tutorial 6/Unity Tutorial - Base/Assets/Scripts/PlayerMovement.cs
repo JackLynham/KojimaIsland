@@ -82,6 +82,7 @@ public class PlayerMovement : MonoBehaviour
             anim.SetBool("Backward", false);
             anim.SetBool("Jump", false);
         }
+
         //Turning Left 
         if (Input.GetAxis("Horizontal") < 0)
         {
@@ -100,26 +101,19 @@ public class PlayerMovement : MonoBehaviour
         {
             if (Input.GetKeyDown("space"))
             {
-                //  transform.Translate(Vector3.up * jumpSpeed);
-
                 rb.velocity = new Vector3(0, 10.0f, 0);
-
                 anim.SetFloat(hash.speedFloat, 0, speedDampTime, Time.deltaTime);
                 anim.SetBool("Jump", true);
+                onFloor = false;
             }
         }
    
    }
 
-    void CollsionOnEnter(Collision Player)
+    void OnCollisionEnter(Collision Player)
     {
         Player.gameObject.CompareTag("Ground");
         onFloor = true;
-    }
-    void CollsionOnExit(Collision Player)
-    {
-        Player.gameObject.CompareTag("Ground");
-        onFloor = false;
     }
 
     //Rotating Camerea
