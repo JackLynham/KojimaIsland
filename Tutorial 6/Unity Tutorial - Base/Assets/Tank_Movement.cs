@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Tank_Movement : MonoBehaviour
 {
-    public bool TankActive;
+    public bool tankActive;
     [Range(0f, 2f)]
     public float Speed;
    
@@ -13,22 +13,31 @@ public class Tank_Movement : MonoBehaviour
     {
 
     }
+
+    void FixedUpdate()
+    {
+        MovementManager();
+    }
     void MovementManager()
     {
-        
-        if (TankActive)
+      
+
+        if (tankActive)
         {
             if (Input.GetAxis("Vertical") > 0)
             {
                 // forward
                 transform.Translate(Vector3.forward * Speed);
-            }
+            }  
         }
     }
 
-    void OnCollisionEnter(Collision Player)
+    void OnCollisionEnter(Collision other)
     {
-        Player.gameObject.CompareTag("Tank");
-        TankActive = true;
+        if (other.gameObject.name == "char_ethan")
+        {
+             tankActive = true;
+        }
+       
     }
 }
