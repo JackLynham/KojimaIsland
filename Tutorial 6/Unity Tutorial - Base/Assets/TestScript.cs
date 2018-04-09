@@ -2,10 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NewBehaviourScript : MonoBehaviour {
-
+public class TestScript : MonoBehaviour
+{
+    public int score = 100;
 	// Use this for initialization
-	void Start () {
+	void Start ()
+    {
 		
 	}
 	

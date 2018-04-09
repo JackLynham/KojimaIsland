@@ -78,8 +78,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\CameraTrigger.cs" />
-    <Compile Include="Assets\NewBehaviourScript.cs" />
+    <Compile Include="Assets\Scripts\CameraTrigger.cs" />
     <Compile Include="Assets\Scripts\CamereaScript.cs" />
     <Compile Include="Assets\Scripts\Camereas\DollyZoom.cs" />
     <Compile Include="Assets\Scripts\Camereas\DungeonCamerea.cs" />
@@ -87,14 +86,16 @@
     <Compile Include="Assets\Scripts\Camereas\LookAtCamera.cs" />
     <Compile Include="Assets\Scripts\Camereas\PictureinPicture.cs" />
     <Compile Include="Assets\Scripts\Door\blowdoor.cs" />
-    <Compile Include="Assets\Scripts\HashIDs.cs" />
+    <Compile Include="Assets\Scripts\Kojima Island\Ethan\PlayerMovement.cs" />
+    <Compile Include="Assets\Scripts\Kojima Island\HashIDs.cs" />
+    <Compile Include="Assets\Scripts\Kojima Island\Tank\Game_States.cs" />
+    <Compile Include="Assets\Scripts\Kojima Island\Tank\Tank_Movement.cs" />
     <Compile Include="Assets\Scripts\Platform Movement stuff\WhosTheDaddy.cs" />
     <Compile Include="Assets\Scripts\Platform Movement stuff\platformMovement.cs" />
-    <Compile Include="Assets\Scripts\PlayerMovement.cs" />
+    <Compile Include="Assets\Scripts\Set_up_Camera.cs" />
     <Compile Include="Assets\Scripts\ball\Gravityon.cs" />
     <Compile Include="Assets\Scripts\ball\HoverTrigger.cs" />
-    <Compile Include="Assets\Set_up_Camera.cs" />
-    <Compile Include="Assets\Tank_Movement.cs" />
+    <Compile Include="Assets\TestScript.cs" />
     <Compile Include="Assets\UnityChan\Scripts\CameraController.cs" />
     <Compile Include="Assets\UnityChan\Scripts\FaceUpdate.cs" />
     <Compile Include="Assets\UnityChan\Scripts\IdleChanger.cs" />

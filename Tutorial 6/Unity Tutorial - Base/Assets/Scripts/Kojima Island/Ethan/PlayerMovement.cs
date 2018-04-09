@@ -20,7 +20,7 @@ public class PlayerMovement : MonoBehaviour
 
     public Rigidbody rb;
 
-
+    public Game_States game_state;
     void Awake()
     {
         anim = GetComponent<Animator>();
@@ -47,67 +47,69 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
 
-        bool shout = Input.GetButtonDown("Attract");
-        anim.SetBool(hash.shoutingbool, shout);
-        AudioManagement(shout);
+        //bool shout = Input.GetButtonDown("Attract");
+        //anim.SetBool(hash.shoutingbool, shout);
+      //  AudioManagement(shout);
 
     }
 
     void MovementManager()
     {
-        // Walking 
-        if (Input.GetAxis("Vertical") > 0)
+        if (game_state.charMove == true)
         {
-            // forward
-            transform.Translate(Vector3.forward *Speed);
-
-            anim.SetFloat(hash.speedFloat, 1.5f, speedDampTime, Time.deltaTime);
-            anim.SetBool("Backward", false);
-            anim.SetBool("Jump", false);
-        }
-
-        //Backwards
-        if (Input.GetAxis("Vertical") < 0)
-        {
-            transform.Translate(Vector3.back* Speed);
-
-            anim.SetFloat(hash.speedFloat, -1.5f, speedDampTime, Time.deltaTime);
-            anim.SetBool("Backward", true);
-            anim.SetBool("Jump", false);
-        }
-        //Static 
-        if (Input.GetAxis("Vertical") == 0)
-        {
-            anim.SetFloat(hash.speedFloat, 0, speedDampTime, Time.deltaTime);
-            anim.SetBool("Backward", false);
-            anim.SetBool("Jump", false);
-        }
-
-        //Turning Left 
-        if (Input.GetAxis("Horizontal") < 0)
-        {
-            transform.Rotate(Vector3.down * rotateSpeed);
-            anim.SetBool("Jump", false);
-        }
-
-        //Turning Right
-        if (Input.GetAxis("Horizontal") > 0)
-        {
-            transform.Rotate(Vector3.up * rotateSpeed);
-        }
-        //Jumping
-
-        if (onFloor)
-        {
-            if (Input.GetKeyDown("space"))
+            // Walking 
+            if (Input.GetAxis("Vertical") > 0)
             {
-                rb.velocity = new Vector3(0, 10.0f, 0);
+                // forward
+                transform.Translate(Vector3.forward * Speed);
+
+                anim.SetFloat(hash.speedFloat, 1.5f, speedDampTime, Time.deltaTime);
+                anim.SetBool("Backward", false);
+                anim.SetBool("Jump", false);
+            }
+
+            //Backwards
+            if (Input.GetAxis("Vertical") < 0)
+            {
+                transform.Translate(Vector3.back * Speed);
+
+                anim.SetFloat(hash.speedFloat, -1.5f, speedDampTime, Time.deltaTime);
+                anim.SetBool("Backward", true);
+                anim.SetBool("Jump", false);
+            }
+            //Static 
+            if (Input.GetAxis("Vertical") == 0)
+            {
                 anim.SetFloat(hash.speedFloat, 0, speedDampTime, Time.deltaTime);
-                anim.SetBool("Jump", true);
-                onFloor = false;
+                anim.SetBool("Backward", false);
+                anim.SetBool("Jump", false);
+            }
+
+            //Turning Left 
+            if (Input.GetAxis("Horizontal") < 0)
+            {
+                transform.Rotate(Vector3.down * rotateSpeed);
+                anim.SetBool("Jump", false);
+            }
+
+            //Turning Right
+            if (Input.GetAxis("Horizontal") > 0)
+            {
+                transform.Rotate(Vector3.up * rotateSpeed);
+            }
+            //Jumping
+
+            if (onFloor)
+            {
+                if (Input.GetKeyDown("space"))
+                {
+                    rb.velocity = new Vector3(0, 10.0f, 0);
+                    anim.SetFloat(hash.speedFloat, 0, speedDampTime, Time.deltaTime);
+                    anim.SetBool("Jump", true);
+                    onFloor = false;
+                }
             }
         }
-   
    }
 
     void OnCollisionEnter(Collision Player)
@@ -116,6 +118,14 @@ public class PlayerMovement : MonoBehaviour
         onFloor = true;
     }
 
+
+    public void Tank()
+    {
+       if( game_state.tankMove == true)
+        {
+            game_state.charMove = false;
+        }
+    }
     //Rotating Camerea
     void Rotating(float mouseXInput)
     {

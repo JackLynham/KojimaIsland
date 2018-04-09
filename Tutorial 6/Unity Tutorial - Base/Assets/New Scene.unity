@@ -950,6 +950,48 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 237882901}
   m_Mesh: {fileID: 4300094, guid: 110a36a11fcb8d94e97545848cda3d10, type: 3}
+--- !u!1 &254815849
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 254815851}
+  - component: {fileID: 254815850}
+  m_Layer: 0
+  m_Name: StateController
+  m_TagString: GameController
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &254815850
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 254815849}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c6d2cf1e3957c84da8e8372b8a49030, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tankMove: 0
+  charMove: 1
+--- !u!4 &254815851
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 254815849}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 17.927876, y: 65.53766, z: -18.269915}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &303549440
 GameObject:
   m_ObjectHideFlags: 0
@@ -2365,8 +2407,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 638331285}
   m_LocalRotation: {x: 0.008726557, y: 0, z: 0, w: 0.999962}
-  m_LocalPosition: {x: 17.199875, y: 63.440903, z: -1.8}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 17.199875, y: 63.63, z: -12.75}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children:
   - {fileID: 225797049}
   - {fileID: 1332450693}
@@ -2384,7 +2426,7 @@ Rigidbody:
   serializedVersion: 2
   m_Mass: 1
   m_Drag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 0.1
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
@@ -2401,8 +2443,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 882fa1a01a263484587aa6c306b956d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tankActive: 0
-  Speed: 0.036
+  Speed: 0.215
+  rotateSpeed: 0.144
+  game_state: {fileID: 254815850}
 --- !u!65 &638331290
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2616,10 +2659,11 @@ MonoBehaviour:
   shoutingClip: {fileID: 8300000, guid: f2e0ffd43812bf642a502c434b572c75, type: 3}
   speedDampTime: 0.01
   sensitivityX: 1
-  Speed: 0.0319
+  Speed: 0.0258
   rotateSpeed: 0.5
   onFloor: 0
   rb: {fileID: 657633402}
+  game_state: {fileID: 254815850}
 --- !u!81 &657633407
 AudioListener:
   m_ObjectHideFlags: 0
@@ -5707,8 +5751,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 882fa1a01a263484587aa6c306b956d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tankActive: 0
   Speed: 0
+  rotateSpeed: 0
+  game_state: {fileID: 0}
 --- !u!1 &1469992833
 GameObject:
   m_ObjectHideFlags: 0
