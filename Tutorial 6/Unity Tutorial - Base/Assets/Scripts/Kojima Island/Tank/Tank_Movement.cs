@@ -9,29 +9,28 @@ public class Tank_Movement : MonoBehaviour
     [Range(0f, 2f)]
     public float rotateSpeed;
 
+    public bool test;
     public Game_States game_state;
+    GameObject charActive;
 
     // Update is called once per frame
     void Update()
     {
-
+        charActive = GameObject.FindGameObjectWithTag("Player");
+        MovementManager();
     }
 
     void FixedUpdate()
     {
-        MovementManager();
 
     }
 
     void MovementManager()
     {
 
-        if (game_state.charMove == true)
+        if (game_state.tankMove == true)
         {
-            game_state.tankMove = false;
-        }
-            if (game_state.tankMove == true)
-            {
+          
                 // forward
                 if (Input.GetAxis("Vertical") > 0)
                 {
@@ -47,28 +46,43 @@ public class Tank_Movement : MonoBehaviour
                 //Turning Left 
                 if (Input.GetAxis("Horizontal") < 0)
                 {
-                    transform.Rotate(Vector3.down * rotateSpeed);
+                    transform.Rotate(Vector3.up * rotateSpeed);
 
                 }
 
                 //Turning Right
                 if (Input.GetAxis("Horizontal") > 0)
                 {
-                    transform.Rotate(Vector3.up * rotateSpeed);
+                    transform.Rotate(Vector3.down * rotateSpeed);
                 }
             }
-
+        
         
     }
 
-    void OnCollisionEnter(Collision other)
+    void OnTriggerStay(Collider other)
         {
-            if (other.gameObject.name == "char_ethan")
+           if (other == charActive)
+           {
+
+            if (Input.GetKeyUp("left shift"))
             {
-            game_state.charMove = false;
-            game_state.tankMove = true;
+                if (game_state.charMove)
+                {
+                    charActive.SetActive(false);
+                    game_state.charMove = false;
+                    game_state.tankMove = true;
+                }
+                //else if (game_state.tankMove)
+                //{
+                //    charActive.SetActive(true);
+                //    game_state.charMove = true;
+                //    game_state.tankMove = false;
+                //}
             }
+
         }
+    }
 
 
 

@@ -12,15 +12,20 @@ public class PlayerMovement : MonoBehaviour
     private Animator anim;
     private HashIDs hash;
     private float elapsedtime = 0;
+
     [Range(0f, 0.1f)]
     public float Speed;
-    [Range(0f, 0.5f)]
+
+    [Range(0f, 1f)]
     public float rotateSpeed;
     public bool onFloor;
 
     public Rigidbody rb;
-
     public Game_States game_state;
+
+    void Start()
+    {
+    }
     void Awake()
     {
         anim = GetComponent<Animator>();
@@ -32,6 +37,7 @@ public class PlayerMovement : MonoBehaviour
         ourBody.MoveRotation(fixRotation);
     }
 
+   
     void FixedUpdate()
     {
         float v = Input.GetAxis("Vertical");
@@ -40,23 +46,25 @@ public class PlayerMovement : MonoBehaviour
 
         Rotating(mouseX);
         MovementManager();
+        
         elapsedtime += Time.deltaTime;
       
     }
 
     void Update()
     {
-
-        //bool shout = Input.GetButtonDown("Attract");
-        //anim.SetBool(hash.shoutingbool, shout);
-      //  AudioManagement(shout);
+    Tank();
+        bool shout = Input.GetButtonDown("Attract");
+        anim.SetBool(hash.shoutingbool, shout);
+        AudioManagement(shout);
 
     }
 
     void MovementManager()
     {
-        if (game_state.charMove == true)
+        if (game_state.charMove == true )
         {
+
             // Walking 
             if (Input.GetAxis("Vertical") > 0)
             {
