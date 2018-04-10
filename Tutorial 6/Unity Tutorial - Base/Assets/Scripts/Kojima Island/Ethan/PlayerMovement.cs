@@ -53,7 +53,6 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-    Tank();
         bool shout = Input.GetButtonDown("Attract");
         anim.SetBool(hash.shoutingbool, shout);
         AudioManagement(shout);
@@ -124,16 +123,11 @@ public class PlayerMovement : MonoBehaviour
     {
         Player.gameObject.CompareTag("Ground");
         onFloor = true;
+
     }
 
 
-    public void Tank()
-    {
-       if( game_state.tankMove == true)
-        {
-            game_state.charMove = false;
-        }
-    }
+  
     //Rotating Camerea
     void Rotating(float mouseXInput)
     {

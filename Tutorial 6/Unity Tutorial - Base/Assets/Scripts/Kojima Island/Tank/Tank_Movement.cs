@@ -28,7 +28,7 @@ public class Tank_Movement : MonoBehaviour
     void MovementManager()
     {
 
-        if (game_state.tankMove == true)
+        if (!game_state. charMove)
         {
           
                 // forward
@@ -61,32 +61,17 @@ public class Tank_Movement : MonoBehaviour
     }
 
     void OnTriggerStay(Collider other)
+    {
+        if (other.tag == "Player" && (Input.GetKeyUp("left shift")))
         {
-           if (other == charActive)
-           {
-
-            if (Input.GetKeyUp("left shift"))
-            {
-                if (game_state.charMove)
-                {
-                    charActive.SetActive(false);
-                    game_state.charMove = false;
-                    game_state.tankMove = true;
-                }
-                //else if (game_state.tankMove)
-                //{
-                //    charActive.SetActive(true);
-                //    game_state.charMove = true;
-                //    game_state.tankMove = false;
-                //}
-            }
-
+            game_state.charMove = false;
         }
+   
     }
 
 
 
-  }
+}
 
 
 

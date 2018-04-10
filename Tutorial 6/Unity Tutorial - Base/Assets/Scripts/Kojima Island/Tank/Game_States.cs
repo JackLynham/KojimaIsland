@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Game_States : MonoBehaviour {
 
-    public bool tankMove = false;
+   
     public bool charMove = true;
 
     // Use this for initialization
