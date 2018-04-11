@@ -79,6 +79,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\FirstTrackCam.cs" />
+    <Compile Include="Assets\GunCam.cs" />
+    <Compile Include="Assets\GunTurning.cs" />
     <Compile Include="Assets\Scripts\CameraTrigger.cs" />
     <Compile Include="Assets\Scripts\CamereaScript.cs" />
     <Compile Include="Assets\Scripts\Camereas\DollyZoom.cs" />
@@ -98,7 +100,9 @@
     <Compile Include="Assets\Scripts\ball\HoverTrigger.cs" />
     <Compile Include="Assets\SecondTrackCam.cs" />
     <Compile Include="Assets\TankCam.cs" />
+    <Compile Include="Assets\TankEnter.cs" />
     <Compile Include="Assets\TestScript.cs" />
+    <Compile Include="Assets\TunnelScript.cs" />
     <Compile Include="Assets\UnityChan\Scripts\CameraController.cs" />
     <Compile Include="Assets\UnityChan\Scripts\FaceUpdate.cs" />
     <Compile Include="Assets\UnityChan\Scripts\IdleChanger.cs" />

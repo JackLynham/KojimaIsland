@@ -58,7 +58,7 @@ public class PlayerMovement : MonoBehaviour
         bool shout = Input.GetButtonDown("Attract");
         anim.SetBool(hash.shoutingbool, shout);
         AudioManagement(shout);
-        DeletingChar();
+       // DeletingChar();
     
 
     }
@@ -130,18 +130,24 @@ public class PlayerMovement : MonoBehaviour
        
     }
 
-    void DeletingChar()
-    {
-        if (!game_state.charMove)
-        {
-            gameObject.SetActive(false);
-        }
+    //void DeletingChar()
+    //{
+    //    if (!game_state.charMove)
+    //    {
+    //        gameObject.SetActive(false);
 
-        if(game_state.charMove)
-        {
-            gameObject.SetActive(true);
-        }
-    }
+    //        if (!game_state.charMove && (Input.GetKeyDown("left shift")))
+    //        {
+    //            gameObject.SetActive(true);
+    //        }
+
+    //    }
+
+    //    if (game_state.charMove)
+    //    {
+    //        gameObject.SetActive(true);
+    //    }
+    //}
 
 
     //Rotating Camerea

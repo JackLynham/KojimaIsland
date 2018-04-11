@@ -6,37 +6,91 @@ public class Set_up_Camera : MonoBehaviour
 {
     public Camera FollowCam;
     public Camera StaticCam;
-    public Camera PiPiCam;
+    public Camera MinimapCam;
     public Camera TankCam;
-	// Use this for initialization
+    public Camera firstTrackCam;
+    public Camera SecondTrackCam;
+    public Camera GunCam;
+    public Camera TunnelCam;
+    // Use this for initialization
 
-	void Start ()
+    void Start()
     {
         GameObject PlayerCharacter = GameObject.FindGameObjectWithTag("Player");
         FollowCam.enabled = true;
         StaticCam.enabled = false;
-        PiPiCam.enabled = false;
+        MinimapCam.enabled = false;
+        TunnelCam.enabled = false;
+
 
         PlayerCharacter.GetComponent<AudioListener>().enabled = true;
         StaticCam.GetComponent<AudioListener>().enabled = false;
 
         GameObject TankChracter = GameObject.FindGameObjectWithTag("Tank");
         TankCam.enabled = false;
-	}
+        firstTrackCam.enabled = false;
+        SecondTrackCam.enabled = false;
+        GunCam.enabled = false;
+    }
 
     void Update()
     {
-        if(Input.GetKeyUp ("m"))
+        if (Input.GetKeyUp("m"))
         {
-            PiPiCam.enabled = !PiPiCam.enabled;
+            MinimapCam.enabled = !MinimapCam.enabled;
+            FollowCam.enabled = !FollowCam.enabled;
         }
 
         if (Input.GetKeyUp("left shift"))
         {
             FollowCam.enabled = !FollowCam.enabled;
             TankCam.enabled = !TankCam.enabled;
-            
+            StaticCam.enabled = false;
+            MinimapCam.enabled = false;
+            firstTrackCam.enabled = false;
+            SecondTrackCam.enabled = false;
+            GunCam.enabled = false;
+
+
         }
 
-    }	
+
+        if (Input.GetKeyUp("t"))
+        {
+            TankCam.enabled = !TankCam.enabled;
+            firstTrackCam.enabled = !firstTrackCam.enabled;
+
+        }
+
+        if (Input.GetKeyUp("y"))
+        {
+            FollowCam.enabled = !FollowCam.enabled;
+            SecondTrackCam.enabled = !SecondTrackCam.enabled;
+        }
+
+        if (Input.GetKeyUp("g"))
+        {
+            FollowCam.enabled = !FollowCam.enabled;
+            GunCam.enabled = !GunCam.enabled;
+        }
+
+
+
+    }
+
+    //void OnTriggerStay(Collider other)
+    //{
+    //    if (other.tag == "Tank" && (Input.GetKeyUp("left shift")))
+    //    {
+    //        game_state.charMove = false;
+    //       // outTank = true;
+
+    //    }
+
+    //    if (!game_state.charMove && outTank == true && (Input.GetKeyDown("left shift")))
+    //    {
+    //        game_state.charMove = true;
+    //    }
+    //}
+
 }

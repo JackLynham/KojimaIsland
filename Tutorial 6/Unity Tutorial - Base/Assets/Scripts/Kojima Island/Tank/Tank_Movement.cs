@@ -14,16 +14,15 @@ public class Tank_Movement : MonoBehaviour
     GameObject charActive;
     public float sensitivityX = 1.0f;
 
-
-    public GameObject player;
+ 
 
     // Update is called once per frame
     void Update()
     {
         charActive = GameObject.FindGameObjectWithTag("Player");
         MovementManager();
-        SetParent(player);
-        DetachFromParent();
+        //SetParent(player);
+        //DetachFromParent();
     }
 
     void FixedUpdate()
@@ -78,12 +77,10 @@ public class Tank_Movement : MonoBehaviour
 
         void OnTriggerStay(Collider other)
     {
-        if (other.tag == "Player" && outTank == false && (Input.GetKeyUp("left shift" )))
+        if (other.tag == "Player" && outTank == false && (Input.GetKeyUp("left shift")))
         {
             game_state.charMove = false;
-
             outTank = true;
-
             
         }
 
@@ -94,19 +91,19 @@ public class Tank_Movement : MonoBehaviour
     }
 
 
-    public void SetParent(GameObject Newer)
-    {
-         player.transform.parent = Newer.transform;
-    }
+    //public void SetParent(GameObject Newer)
+    //{
+    //     player.transform.parent = Newer.transform;
+    //}
 
-    public void DetachFromParent()
-    {
-        if (!game_state.charMove && (Input.GetKeyDown("left shift")))
-        {
-            transform.parent = null;
-        }
+    //public void DetachFromParent()
+    //{
+    //    if (!game_state.charMove && (Input.GetKeyDown("left shift")))
+    //    {
+    //        transform.parent = null;
+    //    }
 
-    }
+    //}
 }
 
 
