@@ -109,7 +109,7 @@ MonoBehaviour:
   m_MinSize: {x: 683, y: 492}
   m_MaxSize: {x: 14004, y: 14042}
   vertical: 0
-  controlID: 107
+  controlID: 47
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -363,9 +363,9 @@ MonoBehaviour:
     height: 650
   m_TreeViewState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 582f0000
-    m_LastClickedID: 12120
-    m_ExpandedIDs: e6fbffff00000000
+    m_SelectedIDs: 4a54e9ff
+    m_LastClickedID: -1485750
+    m_ExpandedIDs: e6fbffff00000000b02e0000fa2e0000242f0000582f00006c2f0000fa300000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -415,14 +415,14 @@ MonoBehaviour:
     width: 957
     height: 650
   m_SceneLighting: 0
-  lastFramingTime: 3259.472090616707
+  lastFramingTime: 1520.9999011456587
   m_2DMode: 0
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -37.843315, y: 54.0421, z: -64.973946}
+    m_Target: {x: 16.701948, y: 63.28845, z: -22.250875}
     speed: 2
-    m_Value: {x: -37.843315, y: 54.0421, z: -64.973946}
+    m_Value: {x: 16.701948, y: 63.28845, z: -22.250875}
   m_RenderMode: 2
   m_ValidateTrueMetals: 0
   m_SceneViewState:
@@ -445,13 +445,13 @@ MonoBehaviour:
       speed: 2
       m_Value: 0
   m_Rotation:
-    m_Target: {x: -0.034179956, y: 0.8932394, z: -0.06836842, w: -0.44339868}
+    m_Target: {x: 0.09345611, y: -0.7467092, z: 0.106966265, w: 0.6500787}
     speed: 2
-    m_Value: {x: -0.034174465, y: 0.89309585, z: -0.06835744, w: -0.44332746}
+    m_Value: {x: 0.09343962, y: -0.7465775, z: 0.10694739, w: 0.64996403}
   m_Size:
-    m_Target: 75.54099
+    m_Target: 7.113302
     speed: 2
-    m_Value: 75.54099
+    m_Value: 7.113302
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -565,7 +565,7 @@ MonoBehaviour:
     width: 1373
     height: 255
   m_SearchFilter:
-    m_NameFilter: game
+    m_NameFilter: 
     m_ClassNames: []
     m_AssetLabels: []
     m_AssetBundleNames: []
@@ -575,19 +575,19 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 0
     m_Folders:
-    - Assets
+    - Assets/Scripts/Kojima Island/Tank
   m_ViewMode: 1
   m_StartGridSize: 16
   m_LastFolders:
-  - Assets
+  - Assets/Scripts/Kojima Island/Tank
   m_LastFoldersGridSize: 16
   m_LastProjectPath: D:\KojimaIsland\Tutorial 6\Unity Tutorial - Base
   m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 66}
-    m_SelectedIDs: 
-    m_LastClickedID: 0
-    m_ExpandedIDs: 000000009a2500003a260000d62800009a290000682b0000de2c0000583600005a3600005c3600005e360000603600006236000064360000663600006836000000ca9a3bffffff7f
+    scrollPos: {x: 0, y: 98}
+    m_SelectedIDs: 72280000
+    m_LastClickedID: 10354
+    m_ExpandedIDs: 000000009a2500003a260000d62800009a290000682b0000de2c00005a3600005c3600005e36000060360000623600006436000066360000683600006a36000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -615,7 +615,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000009a2500003a260000d62800009a290000682b0000de2c0000583600005a3600005c3600005e3600006036000062360000643600006636000068360000
+    m_ExpandedIDs: 000000009a2500003a260000d62800009a290000682b0000de2c00005a3600005c3600005e36000060360000623600006436000066360000683600006a360000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -642,7 +642,7 @@ MonoBehaviour:
   m_ListAreaState:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 1
+    m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: 34030000f417000094170000fa170000501900003662ffffa6000000220000000825000030000000ec2300001a01000014220000201e00003e1e00003e1f00000e020000d41f00009a270000244b000070000000102500003a250000622500007625000018020000f2bfffffdc220000d051000002260000e6080000c2060000920600009e08000068090000e806000090060000dc2f0000043000005e4d0000022a00004632000000000000fc280000042d0000842600005c29000076290000302b00007a2f0000e23100008a290000
     m_RenameOverlay:
       m_UserAcceptedRename: 0

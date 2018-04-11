@@ -23,6 +23,8 @@ public class PlayerMovement : MonoBehaviour
     public Rigidbody rb;
     public Game_States game_state;
 
+
+
     void Start()
     {
     }
@@ -56,6 +58,8 @@ public class PlayerMovement : MonoBehaviour
         bool shout = Input.GetButtonDown("Attract");
         anim.SetBool(hash.shoutingbool, shout);
         AudioManagement(shout);
+        DeletingChar();
+    
 
     }
 
@@ -123,11 +127,23 @@ public class PlayerMovement : MonoBehaviour
     {
         Player.gameObject.CompareTag("Ground");
         onFloor = true;
+       
+    }
 
+    void DeletingChar()
+    {
+        if (!game_state.charMove)
+        {
+            gameObject.SetActive(false);
+        }
+
+        if(game_state.charMove)
+        {
+            gameObject.SetActive(true);
+        }
     }
 
 
-  
     //Rotating Camerea
     void Rotating(float mouseXInput)
     {

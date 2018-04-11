@@ -26,7 +26,7 @@ public class Set_up_Camera : MonoBehaviour
 
     void Update()
     {
-        if(Input.GetKeyUp ("p"))
+        if(Input.GetKeyUp ("m"))
         {
             PiPiCam.enabled = !PiPiCam.enabled;
         }
