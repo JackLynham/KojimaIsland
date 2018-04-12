@@ -78,6 +78,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\EnterScript.cs" />
     <Compile Include="Assets\FirstTrackCam.cs" />
     <Compile Include="Assets\GunCam.cs" />
     <Compile Include="Assets\GunTurning.cs" />
@@ -89,6 +90,7 @@
     <Compile Include="Assets\Scripts\Camereas\LookAtCamera.cs" />
     <Compile Include="Assets\Scripts\Camereas\PictureinPicture.cs" />
     <Compile Include="Assets\Scripts\Door\blowdoor.cs" />
+    <Compile Include="Assets\Scripts\EnterAndExitVehicle.cs" />
     <Compile Include="Assets\Scripts\Kojima Island\Ethan\PlayerMovement.cs" />
     <Compile Include="Assets\Scripts\Kojima Island\HashIDs.cs" />
     <Compile Include="Assets\Scripts\Kojima Island\Tank\Game_States.cs" />
@@ -99,6 +101,7 @@
     <Compile Include="Assets\Scripts\ball\Gravityon.cs" />
     <Compile Include="Assets\Scripts\ball\HoverTrigger.cs" />
     <Compile Include="Assets\SecondTrackCam.cs" />
+    <Compile Include="Assets\SmallTunnelScript.cs" />
     <Compile Include="Assets\TankCam.cs" />
     <Compile Include="Assets\TankEnter.cs" />
     <Compile Include="Assets\TestScript.cs" />
@@ -109,6 +112,7 @@
     <Compile Include="Assets\UnityChan\Scripts\SceneLoader.cs" />
     <Compile Include="Assets\UnityChan\Scripts\ThirdPersonCamera.cs" />
     <Compile Include="Assets\UnityChan\Scripts\UnityChanControlScriptWithRgidBody.cs" />
+    <Compile Include="Assets\test.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Shaders\ReflectiveDiffuseSpecTransp.shader" />

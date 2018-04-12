@@ -65,7 +65,7 @@ public class PlayerMovement : MonoBehaviour
 
     void MovementManager()
     {
-        if (game_state.charMove == true )
+        if (game_state.charMove == true && !game_state.inTank)
         {
 
             // Walking 

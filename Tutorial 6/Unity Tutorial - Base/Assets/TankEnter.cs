@@ -8,32 +8,40 @@ public class TankEnter : MonoBehaviour
     public Transform playerExit;
 
     private GameObject player;
-
+    private GameObject tank;
+    public Game_States game_state;
     public bool is_ethan;
 
-	void Update ()
+    void Update ()
     {
 		
 	}
 
     void OnTriggerStay(Collider col)
     {
-        if(col.gameObject.name == "tank" && Input.GetKeyUp("left shift"))
+        if(col.gameObject.name == "Tank" && Input.GetKeyUp("left shift")&&is_ethan == false)
         {
+         
             transform.SetPositionAndRotation(playerPos.position, playerPos.rotation);
             player = GameObject.FindGameObjectWithTag("Player");
             player.GetComponent<PlayerMovement>().enabled = false;
 
+            tank = GameObject.FindGameObjectWithTag("Tank");
+            tank.GetComponent<Tank_Movement>().enabled = true;
             is_ethan = true;
         }
 
-        if (col.gameObject.name == "tank" && Input.GetKeyUp("left shift" ) && is_ethan == true)
+        if (Input.GetKeyDown("left shift") && is_ethan == true)
         {
+           // game_state.charMove = true;
             transform.SetPositionAndRotation(playerExit.position, playerExit.rotation);
             player = GameObject.FindGameObjectWithTag("Player");
             player.GetComponent<PlayerMovement>().enabled = true;
 
-            is_ethan = false;
+            tank = GameObject.FindGameObjectWithTag("Tank");
+            //tank.GetComponent<Tank_Movement>().enabled = false;
+
+            is_ethan = false;   
         }
     }
 }

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Set_up_Camera : MonoBehaviour
 {
+    public Game_States game_state;
     public Camera FollowCam;
     public Camera StaticCam;
     public Camera MinimapCam;
@@ -12,6 +13,7 @@ public class Set_up_Camera : MonoBehaviour
     public Camera SecondTrackCam;
     public Camera GunCam;
     public Camera TunnelCam;
+    public Camera SmallTunnelCam;
     // Use this for initialization
 
     void Start()
@@ -21,6 +23,7 @@ public class Set_up_Camera : MonoBehaviour
         StaticCam.enabled = false;
         MinimapCam.enabled = false;
         TunnelCam.enabled = false;
+        SmallTunnelCam.enabled = false;
 
 
         PlayerCharacter.GetComponent<AudioListener>().enabled = true;
@@ -41,18 +44,40 @@ public class Set_up_Camera : MonoBehaviour
             FollowCam.enabled = !FollowCam.enabled;
         }
 
-        if (Input.GetKeyUp("left shift"))
+        if(game_state.charMove == true)
         {
-            FollowCam.enabled = !FollowCam.enabled;
-            TankCam.enabled = !TankCam.enabled;
-            StaticCam.enabled = false;
-            MinimapCam.enabled = false;
-            firstTrackCam.enabled = false;
-            SecondTrackCam.enabled = false;
-            GunCam.enabled = false;
-
-
+            FollowCam.enabled = true;
         }
+        else if(!game_state.charMove)
+        {
+            FollowCam.enabled = false;
+        }
+
+        if(game_state.inTank == true)
+        {
+            TankCam.enabled = true;
+            FollowCam.enabled = false;
+        }
+        else if(!game_state.inTank)
+        {
+            TankCam.enabled = false;
+        }
+        
+        //if (Input.GetKeyUp("left shift"))
+        //{
+
+
+        //FollowCam.enabled = !FollowCam.enabled;
+        //TankCam.enabled = !TankCam.enabled;
+        //StaticCam.enabled = false;
+        //MinimapCam.enabled = false;
+        //firstTrackCam.enabled = false;
+        //SecondTrackCam.enabled = false;
+        //GunCam.enabled = false;
+        //TunnelCam.enabled = false;
+        //SmallTunnelCam.enabled = false;
+
+        //}
 
 
         if (Input.GetKeyUp("t"))

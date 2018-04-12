@@ -33,7 +33,7 @@ public class Tank_Movement : MonoBehaviour
     void MovementManager()
     {
 
-        if (!game_state. charMove)
+        if (game_state.inTank)
         {
           
                 // forward
@@ -61,7 +61,6 @@ public class Tank_Movement : MonoBehaviour
                     transform.Rotate(Vector3.down * rotateSpeed);
                 }
             }
-        
         
     }
 
@@ -91,19 +90,7 @@ public class Tank_Movement : MonoBehaviour
     }
 
 
-    //public void SetParent(GameObject Newer)
-    //{
-    //     player.transform.parent = Newer.transform;
-    //}
-
-    //public void DetachFromParent()
-    //{
-    //    if (!game_state.charMove && (Input.GetKeyDown("left shift")))
-    //    {
-    //        transform.parent = null;
-    //    }
-
-    //}
+    
 }
 
 
