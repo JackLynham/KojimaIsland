@@ -78,10 +78,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\BulletMove.cs" />
+    <Compile Include="Assets\Despawn.cs" />
     <Compile Include="Assets\EnterScript.cs" />
     <Compile Include="Assets\FirstTrackCam.cs" />
     <Compile Include="Assets\GunCam.cs" />
     <Compile Include="Assets\GunTurning.cs" />
+    <Compile Include="Assets\MoveGun.cs" />
     <Compile Include="Assets\Scripts\CameraTrigger.cs" />
     <Compile Include="Assets\Scripts\CamereaScript.cs" />
     <Compile Include="Assets\Scripts\Camereas\DollyZoom.cs" />
@@ -102,6 +105,8 @@
     <Compile Include="Assets\Scripts\ball\HoverTrigger.cs" />
     <Compile Include="Assets\SecondTrackCam.cs" />
     <Compile Include="Assets\SmallTunnelScript.cs" />
+    <Compile Include="Assets\Spawn.cs" />
+    <Compile Include="Assets\Spawner.cs" />
     <Compile Include="Assets\TankCam.cs" />
     <Compile Include="Assets\TankEnter.cs" />
     <Compile Include="Assets\TestScript.cs" />

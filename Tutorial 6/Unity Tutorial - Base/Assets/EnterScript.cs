@@ -35,7 +35,7 @@ public class EnterScript : MonoBehaviour
           
         }
 
-        else if (other.gameObject.tag == "Player" && Gamestate.inTank == false && Input.GetKeyUp(KeyCode.LeftShift))
+        else if (other.gameObject.tag == "Player" && Gamestate.inTank == false && Input.GetKeyUp(KeyCode.E))
         {
 
             //PlayerBackup.SetActive(true);

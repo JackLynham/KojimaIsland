@@ -44,78 +44,35 @@ public class Set_up_Camera : MonoBehaviour
             FollowCam.enabled = !FollowCam.enabled;
         }
 
-        if(game_state.charMove == true)
+        if (Input.GetKeyUp("e"))
         {
-            FollowCam.enabled = true;
+            FollowCam.enabled = !FollowCam.enabled;
+            TankCam.enabled = !TankCam.enabled;
         }
-        else if(!game_state.charMove)
-        {
-            FollowCam.enabled = false;
-        }
-
-        if(game_state.inTank == true)
-        {
-            TankCam.enabled = true;
-            FollowCam.enabled = false;
-        }
-        else if(!game_state.inTank)
-        {
-            TankCam.enabled = false;
-        }
-        
-        //if (Input.GetKeyUp("left shift"))
-        //{
-
-
-        //FollowCam.enabled = !FollowCam.enabled;
-        //TankCam.enabled = !TankCam.enabled;
-        //StaticCam.enabled = false;
-        //MinimapCam.enabled = false;
-        //firstTrackCam.enabled = false;
-        //SecondTrackCam.enabled = false;
-        //GunCam.enabled = false;
-        //TunnelCam.enabled = false;
-        //SmallTunnelCam.enabled = false;
-
-        //}
 
 
         if (Input.GetKeyUp("t"))
-        {
-            TankCam.enabled = !TankCam.enabled;
+        { 
             firstTrackCam.enabled = !firstTrackCam.enabled;
-
+            FollowCam.enabled = !FollowCam.enabled;
         }
 
         if (Input.GetKeyUp("y"))
         {
-            FollowCam.enabled = !FollowCam.enabled;
             SecondTrackCam.enabled = !SecondTrackCam.enabled;
+            FollowCam.enabled = !FollowCam.enabled;
         }
 
         if (Input.GetKeyUp("g"))
         {
             FollowCam.enabled = !FollowCam.enabled;
             GunCam.enabled = !GunCam.enabled;
+            
         }
-
 
 
     }
 
-    //void OnTriggerStay(Collider other)
-    //{
-    //    if (other.tag == "Tank" && (Input.GetKeyUp("left shift")))
-    //    {
-    //        game_state.charMove = false;
-    //       // outTank = true;
-
-    //    }
-
-    //    if (!game_state.charMove && outTank == true && (Input.GetKeyDown("left shift")))
-    //    {
-    //        game_state.charMove = true;
-    //    }
-    //}
+    
 
 }

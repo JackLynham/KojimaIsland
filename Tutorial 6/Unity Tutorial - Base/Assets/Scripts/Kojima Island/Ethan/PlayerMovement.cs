@@ -22,6 +22,7 @@ public class PlayerMovement : MonoBehaviour
 
     public Rigidbody rb;
     public Game_States game_state;
+   
 
 
 
